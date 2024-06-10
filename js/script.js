@@ -29,18 +29,15 @@ const buttonNext = document.querySelector(".next-button");
 // Creo un evento al click
 buttonNext.addEventListener("click",
     function(){
+        // Rimuovo class active
+        items[indexNumber].classList.remove("active");
 
-        if(indexNumber < imgList.length - 1){
-            // Rimuovo class active
-            items[indexNumber].classList.remove("active");
+        // aumento valore indice
+        indexNumber = (indexNumber + 1) % imgList.length;
+        console.log(indexNumber);
 
-            // aumento valore indice
-            indexNumber++;
-            console.log(indexNumber);
-
-            // aggiugno class active
-            items[indexNumber].classList.add("active");
-        }
+        // aggiugno class active
+        items[indexNumber].classList.add("active");
     }
 )
 
@@ -50,18 +47,15 @@ const buttonPreview = document.querySelector(".preview-button");
 // creo un altro evento al click
 buttonPreview.addEventListener("click",
     function(){
+        // Rimuovo class active
+        items[indexNumber].classList.remove("active");
 
-        if(indexNumber >= 1){
-            // Rimuovo class active
-            items[indexNumber].classList.remove("active");
+        // diminuisco valore indice 
+        indexNumber = (indexNumber - 1 + imgList.length) % imgList.length;
+        console.log(indexNumber);
 
-            // aumento valore indice
-            indexNumber--;
-            console.log(indexNumber);
-
-            // aggiugno class active
-            items[indexNumber].classList.add("active");
-        }
+        // aggiugno class active
+        items[indexNumber].classList.add("active");
     }
 )
 
