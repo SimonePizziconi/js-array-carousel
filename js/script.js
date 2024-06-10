@@ -15,4 +15,12 @@ for (let i = 0; i < imgList.length; i++){
 
     // L'elemento lo inserisco nel container
     imgContainer.innerHTML += imgItem;
+
+    // aggiungo class active al primo elemento
+    let indexNumber = 0;
+
+    let items = document.getElementsByClassName("item");
+
+    items[indexNumber].classList.add("active");
+
 }
