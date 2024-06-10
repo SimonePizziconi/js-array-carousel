@@ -11,16 +11,35 @@ for (let i = 0; i < imgList.length; i++){
     let imgItem = (`<div class="item">
                         <img src="${imgList[i]}" alt="">
                     </div>`);
-    console.log(imgItem);
 
     // L'elemento lo inserisco nel container
     imgContainer.innerHTML += imgItem;
-
-    // aggiungo class active al primo elemento
-    let indexNumber = 0;
-
-    let items = document.getElementsByClassName("item");
-
-    items[indexNumber].classList.add("active");
-
 }
+
+// aggiungo class active al primo elemento
+let indexNumber = 0;
+
+let items = document.getElementsByClassName("item");
+
+items[indexNumber].classList.add("active");
+
+// prendo il "bottone"
+const buttonNext = document.querySelector(".next-button");
+
+// Creo un evento al click
+buttonNext.addEventListener("click",
+    function(){
+
+        if(indexNumber < imgList.length - 1){
+            // Rimuovo class active
+            items[indexNumber].classList.remove("active");
+
+            // aumento valore indice
+            indexNumber++;
+            console.log(indexNumber);
+
+            // aggiugno class active
+            items[indexNumber].classList.add("active");
+        }
+    }
+)
