@@ -23,7 +23,7 @@ let items = document.getElementsByClassName("item");
 
 items[indexNumber].classList.add("active");
 
-// prendo il "bottone"
+// prendo il "bottone next"
 const buttonNext = document.querySelector(".next-button");
 
 // Creo un evento al click
@@ -43,3 +43,25 @@ buttonNext.addEventListener("click",
         }
     }
 )
+
+// prendo il "bottone preview"
+const buttonPreview = document.querySelector(".preview-button");
+
+// creo un altro evento al click
+buttonPreview.addEventListener("click",
+    function(){
+
+        if(indexNumber >= 1){
+            // Rimuovo class active
+            items[indexNumber].classList.remove("active");
+
+            // aumento valore indice
+            indexNumber--;
+            console.log(indexNumber);
+
+            // aggiugno class active
+            items[indexNumber].classList.add("active");
+        }
+    }
+)
+
